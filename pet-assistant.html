@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Интерактивный помощник - PetPalace</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="header__content">
+          <div class="logo">
+            <a href="index.html" class="logo__link">
+              <i class="fa-solid fa-paw logo__icon"></i>
+              <span class="logo__text">PetPalace</span>
+            </a>
+          </div>
+          <nav class="nav">
+            <ul class="nav__list">
+              <li class="nav__item">
+                <a href="index.html#features" class="nav__link">Функции</a>
+              </li>
+              <li class="nav__item">
+                <a href="index.html#pet-profile" class="nav__link"
+                  >Профиль питомца</a
+                >
+              </li>
+              <li class="nav__item">
+                <a href="catalog.html" class="nav__link">Каталог</a>
+              </li>
+              <li class="nav__item">
+                <a href="pet-assistant.html" class="nav__link"
+                  >Интерактивный помощник</a
+                >
+              </li>
+
+              <li class="nav__item">
+                <a href="index.html#about" class="nav__link">О нас</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="header__buttons">
+            <a href="login.html" class="btn btn--outline">Войти</a>
+            <a href="register.html" class="btn btn--primary">Регистрация</a>
+          </div>
+          <button class="mobile-menu-toggle" aria-label="Открыть меню">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <div class="mobile-menu">
+      <div class="mobile-menu__header">
+        <div class="logo">
+          <a href="index.html" class="logo__link">
+            <i class="fa-solid fa-paw logo__icon"></i>
+            <span class="logo__text">PetPalace</span>
+          </a>
+        </div>
+        <button class="mobile-menu__close" aria-label="Закрыть меню">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <nav class="mobile-menu__nav">
+        <ul class="mobile-menu__list">
+          <li class="mobile-menu__item">
+            <a href="index.html#features" class="mobile-menu__link">Функции</a>
+          </li>
+          <li class="mobile-menu__item">
+            <a href="index.html#pet-profile" class="mobile-menu__link"
+              >Профиль питомца</a
+            >
+          </li>
+          <li class="mobile-menu__item">
+            <a href="catalog.html" class="mobile-menu__link">Каталог</a>
+          </li>
+          <li class="mobile-menu__item">
+            <a href="index.html#about" class="mobile-menu__link">О нас</a>
+          </li>
+          <li class="mobile-menu__item">
+            <a href="login.html" class="mobile-menu__link">Войти</a>
+          </li>
+          <li class="mobile-menu__item">
+            <a
+              href="register.html"
+              class="mobile-menu__link mobile-menu__link--accent"
+              >Регистрация</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <main>
+      <section class="page-header">
+        <div class="container">
+          <h1 class="page-title">Интерактивный помощник</h1>
+          <p class="page-description">
+            Получите персонализированные рекомендации по уходу за вашим питомцем
+          </p>
+        </div>
+      </section>
+
+      <section class="assistant">
+        <div class="container">
+          <div class="assistant__content">
+            <div class="assistant__main">
+              <div class="tabs">
+                <div class="tabs__header">
+                  <button class="tabs__btn tabs__btn--active" data-tab="chat">
+                    Чат
+                  </button>
+                  <button class="tabs__btn" data-tab="recommendations">
+                    Рекомендации
+                  </button>
+                  <button class="tabs__btn" data-tab="health">Здоровье</button>
+                </div>
+                <div class="tabs__content">
+                  <div
+                    class="tabs__pane tabs__pane--active"
+                    data-tab-content="chat"
+                  >
+                    <div class="chat">
+                      <div class="chat__messages" id="chatMessages">
+                        <div class="chat__message chat__message--assistant">
+                          <div class="chat__avatar">
+                            <img
+                              src="ассистент.png"
+                              alt="Ассистент"
+                              class="chat__avatar-img"
+                            />
+                          </div>
+                          <div class="chat__bubble">
+                            <div class="chat__sender">PetPalace Ассистент</div>
+                            <div class="chat__text">
+                              Привет! Я ваш интерактивный помощник по уходу за
+                              питомцами. Чем я могу помочь вам сегодня?
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="chat__input">
+                        <input
+                          type="text"
+                          class="form-input"
+                          id="chatInput"
+                          placeholder="Задайте вопрос о вашем питомце..."
+                        />
+                        <button
+                          class="btn btn--primary chat__send"
+                          id="sendMessage"
+                        >
+                          <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tabs__pane" data-tab-content="recommendations">
+                    <h2 class="tabs__title">Рекомендации по уходу</h2>
+                    <div class="recommendations-grid">
+                      <div class="recommendation-card">
+                        <div class="recommendation-card__icon">
+                          <i class="fa-solid fa-utensils"></i>
+                        </div>
+                        <div class="recommendation-card__content">
+                          <h3 class="recommendation-card__title">Питание</h3>
+                          <p class="recommendation-card__text">
+                            Для кошек с чувствительным пищеварением
+                            рекомендуется диета с ограниченным количеством
+                            ингредиентов и легкоусвояемыми белками.
+                          </p>
+                          <a href="#" class="recommendation-card__link"
+                            >Подробнее</a
+                          >
+                        </div>
+                      </div>
+                      <div class="recommendation-card">
+                        <div class="recommendation-card__icon">
+                          <i class="fa-solid fa-paw"></i>
+                        </div>
+                        <div class="recommendation-card__content">
+                          <h3 class="recommendation-card__title">Активность</h3>
+                          <p class="recommendation-card__text">
+                            Регулярные игры помогают поддерживать здоровый вес и
+                            стимулируют умственную активность вашего питомца.
+                          </p>
+                          <a href="#" class="recommendation-card__link"
+                            >Подробнее</a
+                          >
+                        </div>
+                      </div>
+                      <div class="recommendation-card">
+                        <div class="recommendation-card__icon">
+                          <i class="fa-solid fa-info"></i>
+                        </div>
+                        <div class="recommendation-card__content">
+                          <h3 class="recommendation-card__title">Гигиена</h3>
+                          <p class="recommendation-card__text">
+                            Регулярная чистка зубов и расчесывание шерсти
+                            помогут предотвратить проблемы со здоровьем вашего
+                            питомца.
+                          </p>
+                          <a href="#" class="recommendation-card__link"
+                            >Подробнее</a
+                          >
+                        </div>
+                      </div>
+                      <div class="recommendation-card">
+                        <div class="recommendation-card__icon">
+                          <i class="fa-solid fa-calendar-check"></i>
+                        </div>
+                        <div class="recommendation-card__content">
+                          <h3 class="recommendation-card__title">Вакцинация</h3>
+                          <p class="recommendation-card__text">
+                            Следующая вакцинация рекомендуется через 3 месяца.
+                            Мы отправим вам напоминание.
+                          </p>
+                          <a href="#" class="recommendation-card__link"
+                            >Добавить в календарь</a
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tabs__pane" data-tab-content="health">
+                    <h2 class="tabs__title">Здоровье питомца</h2>
+                    <div class="health-section">
+                      <h3 class="health-section__title">Ближайшие процедуры</h3>
+                      <div class="health-procedures">
+                        <div class="health-procedure">
+                          <div class="health-procedure__icon">
+                            <i class="fa-solid fa-calendar-check"></i>
+                          </div>
+                          <div class="health-procedure__content">
+                            <h4 class="health-procedure__title">
+                              Ежегодная вакцинация
+                            </h4>
+                            <p class="health-procedure__date">15 июня 2023</p>
+                          </div>
+                          <button class="btn btn--outline btn--sm">
+                            Напомнить
+                          </button>
+                        </div>
+                        <div class="health-procedure">
+                          <div class="health-procedure__icon">
+                            <i class="fa-solid fa-calendar-check"></i>
+                          </div>
+                          <div class="health-procedure__content">
+                            <h4 class="health-procedure__title">
+                              Обработка от паразитов
+                            </h4>
+                            <p class="health-procedure__date">30 мая 2023</p>
+                          </div>
+                          <button class="btn btn--outline btn--sm">
+                            Напомнить
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="health-section">
+                      <h3 class="health-section__title">Мониторинг веса</h3>
+                      <div class="weight-chart">
+                        <p class="weight-chart__placeholder">
+                          График изменения веса будет отображаться здесь
+                        </p>
+                      </div>
+                    </div>
+                    <div class="health-section">
+                      <h3 class="health-section__title">
+                        Рекомендации ветеринара
+                      </h3>
+                      <div class="vet-recommendations">
+                        <p>
+                          На основе профиля вашего питомца рекомендуется
+                          обратить внимание на следующие аспекты здоровья:
+                        </p>
+                        <ul class="vet-recommendations__list">
+                          <li>
+                            Контроль за состоянием пищеварительной системы
+                          </li>
+                          <li>
+                            Регулярная чистка зубов для профилактики зубного
+                            камня
+                          </li>
+                          <li>Поддержание оптимального веса</li>
+                          <li>
+                            Обогащение среды для психологического благополучия
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="assistant__sidebar">
+              <div class="pet-profile-card">
+                <h2 class="pet-profile-card__title">Профиль питомца</h2>
+                <div class="pet-profile-card__info">
+                  <div class="pet-profile-card__avatar">
+                    <img
+                      src="барсик.webp"
+                      alt="Барсик"
+                      class="pet-profile-card__img"
+                    />
+                  </div>
+                  <div class="pet-profile-card__details">
+                    <h3 class="pet-profile-card__name">Барсик</h3>
+                    <p class="pet-profile-card__meta">Кот, 3 года</p>
+                  </div>
+                </div>
+                <div class="pet-profile-card__data">
+                  <div class="pet-profile-card__row">
+                    <span class="pet-profile-card__label">Порода:</span>
+                    <span class="pet-profile-card__value"
+                      >Британская короткошерстная</span
+                    >
+                  </div>
+                  <div class="pet-profile-card__row">
+                    <span class="pet-profile-card__label">Вес:</span>
+                    <span class="pet-profile-card__value">5.2 кг</span>
+                  </div>
+                  <div class="pet-profile-card__row">
+                    <span class="pet-profile-card__label"
+                      >Особые потребности:</span
+                    >
+                    <span class="pet-profile-card__value"
+                      >Чувствительное пищеварение</span
+                    >
+                  </div>
+                </div>
+                <button class="btn btn--outline btn--full">
+                  Редактировать профиль
+                </button>
+              </div>
+
+              <div class="quick-actions">
+                <h3 class="quick-actions__title">Быстрые действия</h3>
+                <div class="quick-actions__grid">
+                  <a href="calculator.html" class="quick-action">
+                    <i class="fa-solid fa-calculator"></i>
+                    <span>Расчет корма</span>
+                  </a>
+                  <a href="calendar.html" class="quick-action">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <span>Календарь</span>
+                  </a>
+                  <a href="diet.html" class="quick-action">
+                    <i class="fa-solid fa-utensils"></i>
+                    <span>Рацион</span>
+                  </a>
+                  <a href="#" class="quick-action">
+                    <i class="fa-solid fa-paw"></i>
+                    <span>Активность</span>
+                  </a>
+                </div>
+              </div>
+
+              <div class="popular-questions">
+                <h3 class="popular-questions__title">Популярные вопросы</h3>
+                <div class="popular-questions__list">
+                  <a href="#" class="popular-question"
+                    >Какой корм лучше для моего питомца?</a
+                  >
+                  <a href="#" class="popular-question"
+                    >Как часто нужно делать прививки?</a
+                  >
+                  <a href="#" class="popular-question"
+                    >Какие игрушки подходят для моего питомца?</a
+                  >
+                  <a href="#" class="popular-question"
+                    >Как ухаживать за шерстью?</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__content">
+          <div class="footer__logo">
+            <a href="index.html" class="logo__link">
+              <i class="fa-solid fa-paw logo__icon"></i>
+              <span class="logo__text">PetPalace</span>
+            </a>
+          </div>
+          <nav class="footer__nav">
+            <ul class="footer__nav-list">
+              <li class="footer__nav-item">
+                <a href="#" class="footer__nav-link">О нас</a>
+              </li>
+              <li class="footer__nav-item">
+                <a href="#" class="footer__nav-link">Контакты</a>
+              </li>
+              <li class="footer__nav-item">
+                <a href="#" class="footer__nav-link"
+                  >Политика конфиденциальности</a
+                >
+              </li>
+              <li class="footer__nav-item">
+                <a href="#" class="footer__nav-link">Условия использования</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="footer__copyright">
+            <p>© 2023 PetPalace. Все права защищены.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/assistant.js"></script>
+  </body>
+</html>

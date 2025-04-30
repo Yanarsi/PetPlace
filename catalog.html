@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Каталог товаров - PetPalace</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="header__content">
+          <div class="logo">
+            <a href="index.html" class="logo__link">
+              <i class="fa-solid fa-paw logo__icon"></i>
+              <span class="logo__text">PetPalace</span>
+            </a>
+          </div>
+          <nav class="nav">
+            <ul class="nav__list">
+              <li class="nav__item">
+                <a href="index.html#features" class="nav__link">Функции</a>
+              </li>
+              <li class="nav__item">
+                <a href="index.html#pet-profile" class="nav__link"
+                  >Профиль питомца</a
+                >
+              </li>
+              <li class="nav__item">
+                <a href="catalog.html" class="nav__link nav__link--active"
+                  >Каталог</a
+                >
+              </li>
+
+              <li class="nav__item">
+                <a href="pet-assistant.html" class="nav__link"
+                  >Интерактивный помощник</a
+                >
+              </li>
+              <li class="nav__item">
+                <a href="index.html#about" class="nav__link">О нас</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="header__buttons">
+            <a href="login.html" class="btn btn--outline">Войти</a>
+            <a href="register.html" class="btn btn--primary">Регистрация</a>
+          </div>
+          <button class="mobile-menu-toggle" aria-label="Открыть меню">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <div class="mobile-menu">
+      <div class="mobile-menu__header">
+        <div class="logo">
+          <a href="index.html" class="logo__link">
+            <i class="fa-solid fa-paw logo__icon"></i>
+            <span class="logo__text">PetPalace</span>
+          </a>
+        </div>
+        <button class="mobile-menu__close" aria-label="Закрыть меню">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <nav class="mobile-menu__nav">
+        <ul class="mobile-menu__list">
+          <li class="mobile-menu__item">
+            <a href="index.html#features" class="mobile-menu__link">Функции</a>
+          </li>
+          <li class="mobile-menu__item">
+            <a href="index.html#pet-profile" class="mobile-menu__link"
+              >Профиль питомца</a
+            >
+          </li>
+          <li class="mobile-menu__item">
+            <a
+              href="catalog.html"
+              class="mobile-menu__link mobile-menu__link--active"
+              >Каталог</a
+            >
+          </li>
+          <li class="mobile-menu__item">
+            <a href="index.html#about" class="mobile-menu__link">О нас</a>
+          </li>
+          <li class="mobile-menu__item">
+            <a href="login.html" class="mobile-menu__link">Войти</a>
+          </li>
+          <li class="mobile-menu__item">
+            <a
+              href="register.html"
+              class="mobile-menu__link mobile-menu__link--accent"
+              >Регистрация</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <main>
+      <section class="page-header">
+        <div class="container">
+          <h1 class="page-title">Рекомендации для Барсика</h1>
+          <p class="page-description">
+            Персонализированный подбор товаров для вашего питомца
+          </p>
+        </div>
+      </section>
+
+      <section class="catalog">
+        <div class="container">
+          <div class="catalog__content">
+            <aside class="catalog__sidebar">
+              <div class="filter-panel">
+                <div class="filter-panel__header">
+                  <h2 class="filter-panel__title">Фильтры</h2>
+                  <i class="fa-solid fa-sliders"></i>
+                </div>
+                <div class="filter-panel__body">
+                  <div class="filter-group">
+                    <h3 class="filter-group__title">Категории</h3>
+                    <div class="filter-group__content">
+                      <label class="checkbox-label">
+                        <input
+                          type="checkbox"
+                          name="category"
+                          value="food"
+                          checked
+                        />
+                        <span class="checkbox-text">Корм</span>
+                      </label>
+                      <label class="checkbox-label">
+                        <input
+                          type="checkbox"
+                          name="category"
+                          value="treats"
+                          checked
+                        />
+                        <span class="checkbox-text">Лакомства</span>
+                      </label>
+                      <label class="checkbox-label">
+                        <input type="checkbox" name="category" value="toys" />
+                        <span class="checkbox-text">Игрушки</span>
+                      </label>
+                      <label class="checkbox-label">
+                        <input
+                          type="checkbox"
+                          name="category"
+                          value="accessories"
+                        />
+                        <span class="checkbox-text">Аксессуары</span>
+                      </label>
+                      <label class="checkbox-label">
+                        <input
+                          type="checkbox"
+                          name="category"
+                          value="hygiene"
+                        />
+                        <span class="checkbox-text">Гигиена</span>
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="filter-divider"></div>
+
+                  <div class="filter-group">
+                    <h3 class="filter-group__title">Особые потребности</h3>
+                    <div class="filter-group__content">
+                      <label class="checkbox-label">
+                        <input
+                          type="checkbox"
+                          name="needs"
+                          value="digestive"
+                          checked
+                        />
+                        <span class="checkbox-text">Пищеварение</span>
+                      </label>
+                      <label class="checkbox-label">
+                        <input type="checkbox" name="needs" value="weight" />
+                        <span class="checkbox-text">Контроль веса</span>
+                      </label>
+                      <label class="checkbox-label">
+                        <input type="checkbox" name="needs" value="skin" />
+                        <span class="checkbox-text">Кожа и шерсть</span>
+                      </label>
+                      <label class="checkbox-label">
+                        <input type="checkbox" name="needs" value="joint" />
+                        <span class="checkbox-text">Суставы</span>
+                      </label>
+                      <label class="checkbox-label">
+                        <input type="checkbox" name="needs" value="dental" />
+                        <span class="checkbox-text">Зубы</span>
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="filter-divider"></div>
+
+                  <div class="filter-group">
+                    <h3 class="filter-group__title">Цена</h3>
+                    <div class="filter-group__content">
+                      <div class="price-slider">
+                        <input
+                          type="range"
+                          min="0"
+                          max="5000"
+                          value="5000"
+                          class="price-slider__input"
+                          id="priceRange"
+                        />
+                        <div class="price-slider__labels">
+                          <span>0 ₽</span>
+                          <span>5000 ₽</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <button class="btn btn--primary btn--full">Применить</button>
+                </div>
+              </div>
+            </aside>
+
+            <div class="catalog__main">
+              <div class="catalog__header">
+                <div class="catalog__results">
+                  <i class="fa-solid fa-filter"></i>
+                  <span>Показано 12 рекомендованных товаров</span>
+                </div>
+                <div class="catalog__sort">
+                  <select class="form-select form-select--sm">
+                    <option value="relevance">По релевантности</option>
+                    <option value="price-asc">По цене (возр.)</option>
+                    <option value="price-desc">По цене (убыв.)</option>
+                    <option value="rating">По рейтингу</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="catalog__grid">
+                <!-- Товар 1 -->
+                <div class="product-card">
+                  <div class="product-card__image">
+                    <img
+                      src="корм1.webp"
+                      alt="Премиум корм для кошек с чувствительным пищеварением"
+                      class="product-card__img"
+                    />
+                    <span class="product-card__badge">Рекомендовано</span>
+                  </div>
+                  <div class="product-card__content">
+                    <h3 class="product-card__title">
+                      Премиум корм для кошек с чувствительным пищеварением
+                    </h3>
+                    <div class="product-card__rating">
+                      <div class="rating">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                      </div>
+                      <span class="product-card__reviews">(42)</span>
+                    </div>
+                    <div class="product-card__footer">
+                      <div class="product-card__price">1 299 ₽</div>
+                      <div class="product-card__weight">2 кг</div>
+                    </div>
+                  </div>
+                  <button class="btn btn--primary btn--full product-card__btn">
+                    В корзину
+                  </button>
+                </div>
+
+                <!-- Товар 2 -->
+                <div class="product-card">
+                  <div class="product-card__image">
+                    <img
+                      src="корм6.webp"
+                      alt="Беззерновые лакомства для здоровья зубов"
+                      class="product-card__img"
+                    />
+                    <span class="product-card__badge">Рекомендовано</span>
+                  </div>
+                  <div class="product-card__content">
+                    <h3 class="product-card__title">
+                      Беззерновые лакомства для здоровья зубов
+                    </h3>
+                    <div class="product-card__rating">
+                      <div class="rating">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                      </div>
+                      <span class="product-card__reviews">(28)</span>
+                    </div>
+                    <div class="product-card__footer">
+                      <div class="product-card__price">499 ₽</div>
+                      <div class="product-card__weight">100 г</div>
+                    </div>
+                  </div>
+                  <button class="btn btn--primary btn--full product-card__btn">
+                    В корзину
+                  </button>
+                </div>
+
+                <!-- Товар 3 -->
+                <div class="product-card">
+                  <div class="product-card__image">
+                    <img
+                      src="корм3.webp"
+                      alt="Витаминный комплекс для шерсти"
+                      class="product-card__img"
+                    />
+                    <span class="product-card__badge">Рекомендовано</span>
+                  </div>
+                  <div class="product-card__content">
+                    <h3 class="product-card__title">
+                      Витаминный комплекс для шерсти
+                    </h3>
+                    <div class="product-card__rating">
+                      <div class="rating">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                      </div>
+                      <span class="product-card__reviews">(56)</span>
+                    </div>
+                    <div class="product-card__footer">
+                      <div class="product-card__price">899 ₽</div>
+                      <div class="product-card__weight">60 таб.</div>
+                    </div>
+                  </div>
+                  <button class="btn btn--primary btn--full product-card__btn">
+                    В корзину
+                  </button>
+                </div>
+
+                <!-- Товар 4 -->
+                <div class="product-card">
+                  <div class="product-card__image">
+                    <img
+                      src="корм2.webp"
+                      alt="Пробиотики для кошек"
+                      class="product-card__img"
+                    />
+                    <span class="product-card__badge">Рекомендовано</span>
+                  </div>
+                  <div class="product-card__content">
+                    <h3 class="product-card__title">Пробиотики для кошек</h3>
+                    <div class="product-card__rating">
+                      <div class="rating">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                      </div>
+                      <span class="product-card__reviews">(34)</span>
+                    </div>
+                    <div class="product-card__footer">
+                      <div class="product-card__price">1 199 ₽</div>
+                      <div class="product-card__weight">30 капс.</div>
+                    </div>
+                  </div>
+                  <button class="btn btn--primary btn--full product-card__btn">
+                    В корзину
+                  </button>
+                </div>
+
+                <!-- Товар 5 -->
+                <div class="product-card">
+                  <div class="product-card__image">
+                    <img
+                      src="корм4.webp"
+                      alt="Влажный корм с высоким содержанием белка"
+                      class="product-card__img"
+                    />
+                    <span class="product-card__badge">Рекомендовано</span>
+                  </div>
+                  <div class="product-card__content">
+                    <h3 class="product-card__title">
+                      Влажный корм с высоким содержанием белка
+                    </h3>
+                    <div class="product-card__rating">
+                      <div class="rating">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                      </div>
+                      <span class="product-card__reviews">(19)</span>
+                    </div>
+                    <div class="product-card__footer">
+                      <div class="product-card__price">159 ₽</div>
+                      <div class="product-card__weight">85 г</div>
+                    </div>
+                  </div>
+                  <button class="btn btn--primary btn--full product-card__btn">
+                    В корзину
+                  </button>
+                </div>
+
+                <!-- Товар 6 -->
+                <div class="product-card">
+                  <div class="product-card__image">
+                    <img
+                      src="корм5.webp"
+                      alt="Паштет для кошек с чувствительным пищеварением"
+                      class="product-card__img"
+                    />
+                    <span class="product-card__badge">Рекомендовано</span>
+                  </div>
+                  <div class="product-card__content">
+                    <h3 class="product-card__title">
+                      Паштет для кошек с чувствительным пищеварением
+                    </h3>
+                    <div class="product-card__rating">
+                      <div class="rating">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                      </div>
+                      <span class="product-card__reviews">(23)</span>
+                    </div>
+                    <div class="product-card__footer">
+                      <div class="product-card__price">189 ₽</div>
+                      <div class="product-card__weight">85 г</div>
+                    </div>
+                  </div>
+                  <button class="btn btn--primary btn--full product-card__btn">
+                    В корзину
+                  </button>
+                </div>
+              </div>
+
+              <div class="pagination">
+                <button class="pagination__btn pagination__btn--active">
+                  1
+                </button>
+                <button class="pagination__btn">2</button>
+                <button class="pagination__btn">3</button>
+                <button class="pagination__btn pagination__btn--dots">
+                  ...
+                </button>
+                <button class="pagination__btn">10</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__content">
+          <div class="footer__logo">
+            <a href="index.html" class="logo__link">
+              <i class="fa-solid fa-paw logo__icon"></i>
+              <span class="logo__text">PetPalace</span>
+            </a>
+          </div>
+          <nav class="footer__nav">
+            <ul class="footer__nav-list">
+              <li class="footer__nav-item">
+                <a href="#" class="footer__nav-link">О нас</a>
+              </li>
+              <li class="footer__nav-item">
+                <a href="#" class="footer__nav-link">Контакты</a>
+              </li>
+              <li class="footer__nav-item">
+                <a href="#" class="footer__nav-link"
+                  >Политика конфиденциальности</a
+                >
+              </li>
+              <li class="footer__nav-item">
+                <a href="#" class="footer__nav-link">Условия использования</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="footer__copyright">
+            <p>© 2023 PetPalace. Все права защищены.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/catalog.js"></script>
+  </body>
+</html>
